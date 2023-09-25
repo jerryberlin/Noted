@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/noteFragment">
+    <fragment
+        android:id="@+id/noteFragment"
+        android:name="com.example.noted.ui.note.NoteFragment"
+        android:label="NoteFragment" >
+        <action
+            android:id="@+id/action_noteFragment_to_detailNoteActivity"
+            app:destination="@id/detailNoteActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/detailNoteActivity"
+        android:name="com.example.noted.ui.detail.DetailNoteActivity"
+        android:label="activity_detail_note"
+        tools:layout="@layout/activity_detail_note" >
+        <argument
+            android:name="categoryName"
+            app:argType="string"
+            app:nullable="true"
+            android:defaultValue="All" />
+        <argument
+            android:name="noteId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </activity>
+</navigation>
